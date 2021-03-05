@@ -1,8 +1,8 @@
-import '../styles/skeleton.css'
-import '../styles/normalize.css'
+import "../styles/normalize.css";
+import "../styles/skeleton.css";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return <Component {...pageProps} />;
 }
 
-export default MyApp
+export default MyApp;
