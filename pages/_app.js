@@ -1,5 +1,5 @@
-import "../styles/normalize.css";
-import "../styles/skeleton.css";
+import "../styles/normalize.min.css";
+import "../styles/skeleton.min.css";
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />;
