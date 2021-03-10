@@ -1,9 +1,9 @@
-interface IData {
-  Energizer?: string;
-  Maxell?: string;
-  Duracell?: string;
-  Timex?: string;
-  "Dimensions(mm)"?: string;
+export interface IData {
+  Energizer: string;
+  Maxell: string;
+  Duracell: string;
+  Timex: string;
+  "Dimensions(mm)": string;
 }
 
 export const data: IData[] = [
