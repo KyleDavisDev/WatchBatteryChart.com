@@ -11,8 +11,12 @@ export default function Home() {
       </Head>
 
       <main>
-        <div class={"container"}>
+        <div className={"container"}>
           <h1>Watch Battery Size Equivalence Chart</h1>
+          <p>
+            Here is a quick, easy, and to the point watch battery conversion
+            chart.
+          </p>
 
           <Table />
         </div>
