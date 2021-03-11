@@ -5,21 +5,45 @@ import { data, IData } from "./data";
 import { columns } from "./columns";
 import FilterInput from "./components/FilterInput";
 
-const StyledTable = styled(DataTable)`
-  div[role="columnheader"] {
-    &:hover,
-    &:focus {
-      color: inherit;
+const customStyles = {
+  table: {
+    style: {
+      borderLeft: "1px solid #eee",
+      borderRight: "1px solid #eee",
+      borderBottom: "1px solid #eee",
+      borderTop: "1px solid #eee"
+    }
+  },
+  subHeader: {
+    style: {
+      // borderLeft: "1px solid #eee",
+      // borderRight: "1px solid #eee",
+      // borderTop: "1px solid #eee"
+    }
+  },
+  header: {
+    style: {
+      display: "none"
+    }
+  },
+  headRow: {
+    style: {
+      backgroundColor: "#36304a"
+    }
+  },
+  headCells: {
+    style: {
+      color: "#efefef",
+      paddingTop: "5px",
+      paddingBottom: "5px"
+    }
+  },
+  rows: {
+    highlightOnHoverStyle: {
+      backgroundColor: "#eee"
     }
   }
-
-  div.rdt_TableRow[role="row"] {
-    &:hover,
-    &:focus {
-      background-color: #eee;
-    }
-  }
-`;
+};
 
 const Table: React.FC = () => {
   const [filterText, setFilterText] = React.useState("");
@@ -48,20 +72,22 @@ const Table: React.FC = () => {
     if (filterText.length === 0) return true;
 
     return Object.keys(row).find(column => {
-      if (row[column].indexOf(filterText) > -1) return true;
-      return false;
+      return row[column].indexOf(filterText) > -1;
     });
   });
 
   return (
     <>
-      <StyledTable
-        title="Movie List"
+      <DataTable
         columns={columns}
         data={filteredData}
         fixedHeader={true}
+        fixedHeaderScrollHeight={"50vh"}
         subHeader={true}
         subHeaderComponent={subHeaderComponentMemo}
+        customStyles={customStyles}
+        highlightOnHover={true}
+        striped={true}
       />
     </>
   );
