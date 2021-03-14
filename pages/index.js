@@ -8,7 +8,7 @@ const StyledDiv = styled.div`
 `;
 
 const StyledContainer = styled.div`
-  margin: 0px auto;
+  margin: 0 auto;
   padding: 20px 0;
   width: 90%;
   max-width: 1200px;
@@ -20,7 +20,7 @@ export default function Home() {
     <StyledDiv>
       <Head>
         <title>Watch Battery Chart</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/watch.svg" />
       </Head>
 
       <main>
