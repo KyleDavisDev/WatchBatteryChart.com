@@ -1,10 +1,15 @@
 import Head from "next/head";
 import Footer from "../src/components/Footer/Footer";
 import Table from "../src/components/Table/Table";
+import styled from "styled-components";
+
+const StyledDiv = styled.div`
+  background: linear-gradient(45deg, #4158d0, #c850c0);
+`;
 
 export default function Home() {
   return (
-    <div>
+    <StyledDiv>
       <Head>
         <title>Watch Battery Chart</title>
         <link rel="icon" href="/favicon.ico" />
@@ -13,15 +18,10 @@ export default function Home() {
       <main>
         <div className={"container"}>
           <h1>Watch Battery Size Equivalence Chart</h1>
-          <p>
-            Here is a quick, easy, and to the point watch battery conversion
-            chart.
-          </p>
-
           <Table />
         </div>
       </main>
       <Footer />
-    </div>
+    </StyledDiv>
   );
 }

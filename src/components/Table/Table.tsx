@@ -8,6 +8,7 @@ import FilterInput from "./components/FilterInput";
 const customStyles = {
   table: {
     style: {
+      borderRadius: "10px",
       borderLeft: "1px solid #eee",
       borderRight: "1px solid #eee",
       borderBottom: "1px solid #eee",
@@ -16,9 +17,7 @@ const customStyles = {
   },
   subHeader: {
     style: {
-      // borderLeft: "1px solid #eee",
-      // borderRight: "1px solid #eee",
-      // borderTop: "1px solid #eee"
+      backgroundColor: "inherit"
     }
   },
   header: {
@@ -28,7 +27,8 @@ const customStyles = {
   },
   headRow: {
     style: {
-      backgroundColor: "#36304a"
+      backgroundColor: "#36304a",
+      borderRadius: "10px 10px 0 0"
     }
   },
   headCells: {

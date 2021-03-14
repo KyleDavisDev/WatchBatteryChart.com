@@ -10,17 +10,20 @@ const StyledContainer = styled.div`
   input {
     width: 200px;
     border-radius: 5px 0 0 5px;
-    border: 1px solid #e5e5e5;
+    border: 1px solid #bbb;
     padding: 0 32px 0 16px;
   }
 
   button {
+    border: 1px solid #bbb;
+    border-left: 0px;
     border-radius: 0 5px 5px 0;
     padding: 0 20px;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #fff;
   }
 `;
 
