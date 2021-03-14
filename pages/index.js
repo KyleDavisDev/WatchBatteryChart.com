@@ -7,6 +7,14 @@ const StyledDiv = styled.div`
   background: linear-gradient(45deg, #4158d0, #c850c0);
 `;
 
+const StyledContainer = styled.div`
+  margin: 0px auto;
+  padding: 20px 0;
+  width: 90%;
+  max-width: 1200px;
+  min-height: 100vh;
+`;
+
 export default function Home() {
   return (
     <StyledDiv>
@@ -16,10 +24,9 @@ export default function Home() {
       </Head>
 
       <main>
-        <div className={"container"}>
-          <h1>Watch Battery Size Equivalence Chart</h1>
+        <StyledContainer>
           <Table />
-        </div>
+        </StyledContainer>
       </main>
       <Footer />
     </StyledDiv>

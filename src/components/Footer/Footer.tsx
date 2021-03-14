@@ -3,6 +3,13 @@ import styled from "styled-components";
 
 const StyledFooter = styled.footer`
   text-align: center;
+
+  color: #fff;
+
+  a {
+    color: #fff;
+    text-decoration: underline;
+  }
 `;
 
 const Footer: React.FC = () => {

@@ -1,6 +1,5 @@
 import * as React from "react";
 import DataTable from "react-data-table-component";
-import styled from "styled-components";
 import { data, IData } from "./data";
 import { columns } from "./columns";
 import FilterInput from "./components/FilterInput";
@@ -8,11 +7,7 @@ import FilterInput from "./components/FilterInput";
 const customStyles = {
   table: {
     style: {
-      borderRadius: "10px",
-      borderLeft: "1px solid #eee",
-      borderRight: "1px solid #eee",
-      borderBottom: "1px solid #eee",
-      borderTop: "1px solid #eee"
+      borderRadius: "10px"
     }
   },
   subHeader: {
@@ -33,14 +28,34 @@ const customStyles = {
   },
   headCells: {
     style: {
+      fontSize: "18px",
       color: "#efefef",
       paddingTop: "5px",
       paddingBottom: "5px"
+    },
+    activeSortStyle: {
+      color: "#efefef",
+      fontWeight: "bold"
+    },
+    inactiveSortStyle: {
+      "&:focus": {
+        color: "#efefef",
+        fontWeight: "bold"
+      },
+      "&:hover": {
+        color: "#efefef",
+        fontWeight: "bold"
+      }
     }
   },
   rows: {
     highlightOnHoverStyle: {
-      backgroundColor: "#eee"
+      backgroundColor: "#cdcdcd"
+    }
+  },
+  cells: {
+    style: {
+      fontSize: "15px"
     }
   }
 };
@@ -82,7 +97,7 @@ const Table: React.FC = () => {
         columns={columns}
         data={filteredData}
         fixedHeader={true}
-        fixedHeaderScrollHeight={"50vh"}
+        fixedHeaderScrollHeight={"80vh"}
         subHeader={true}
         subHeaderComponent={subHeaderComponentMemo}
         customStyles={customStyles}
