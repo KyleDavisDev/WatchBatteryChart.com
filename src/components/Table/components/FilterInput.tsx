@@ -16,7 +16,7 @@ const StyledContainer = styled.div`
 
   button {
     border: 1px solid #bbb;
-    border-left: 0px;
+    border-left: 0;
     border-radius: 0 5px 5px 0;
     padding: 0 20px;
     text-align: center;
