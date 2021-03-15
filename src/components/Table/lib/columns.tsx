@@ -1,7 +1,7 @@
 import { IDataTableColumn } from "react-data-table-component";
 import * as React from "react";
 
-interface IColumn extends IDataTableColumn {}
+export interface IColumn extends IDataTableColumn {}
 
 export const columns: IColumn[] = [
   {

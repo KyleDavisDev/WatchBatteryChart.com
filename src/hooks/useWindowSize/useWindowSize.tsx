@@ -1,7 +1,6 @@
 import * as React from "react";
 
 const useWindowSize = () => {
-  // Initialize state with undefined width/height so server and client renders match
   const [windowSize, setWindowSize] = React.useState<{
     width?: number;
     height?: number;
