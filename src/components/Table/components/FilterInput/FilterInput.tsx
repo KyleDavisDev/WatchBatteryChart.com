@@ -41,7 +41,7 @@ const FilterInput: React.FC<IFilterInput> = props => {
       <input
         id="search"
         type="text"
-        placeholder="Filter By Name"
+        placeholder="Filter text"
         aria-label="Search Input"
         value={filterText}
         onChange={onChange}

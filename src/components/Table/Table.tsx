@@ -1,89 +1,34 @@
 import * as React from "react";
-import DataTable from "react-data-table-component";
-import { data, IData } from "./data";
-import { columns } from "./columns";
-import FilterInput from "./components/FilterInput";
+import styled from "styled-components";
+import { data, IData } from "./lib/data";
+import FilterInput from "./components/FilterInput/FilterInput";
+import useWindowSize from "../../hooks/useWindowSize/useWindowSize";
+import NormalTable from "./components/NormalTable/NormalTable";
 
-const customStyles = {
-  table: {
-    style: {
-      borderRadius: "10px"
-    }
-  },
-  subHeader: {
-    style: {
-      backgroundColor: "inherit"
-    }
-  },
-  header: {
-    style: {
-      display: "none"
-    }
-  },
-  headRow: {
-    style: {
-      backgroundColor: "#36304a",
-      borderRadius: "10px 10px 0 0"
-    }
-  },
-  headCells: {
-    style: {
-      fontSize: "18px",
-      color: "#efefef",
-      paddingTop: "5px",
-      paddingBottom: "5px"
-    },
-    activeSortStyle: {
-      color: "#efefef",
-      fontWeight: "bold"
-    },
-    inactiveSortStyle: {
-      "&:focus": {
-        color: "#efefef",
-        fontWeight: "bold"
-      },
-      "&:hover": {
-        color: "#efefef",
-        fontWeight: "bold"
-      }
-    }
-  },
-  rows: {
-    highlightOnHoverStyle: {
-      backgroundColor: "#cdcdcd"
-    }
-  },
-  cells: {
-    style: {
-      fontSize: "15px"
-    }
-  }
-};
+const StyledContainer = styled.div`
+  background-color: #fff;
+  border-radius: 10px;
+`;
 
 const Table: React.FC = () => {
+  const TABLET_TO_DESKTOP_BREAKPOINT = 993;
+  const size = useWindowSize();
   const [filterText, setFilterText] = React.useState("");
-  const [resetPaginationToggle, setResetPaginationToggle] = React.useState(
-    false
-  );
 
-  const subHeaderComponentMemo = React.useMemo(() => {
-    const handleClear = () => {
-      if (filterText) {
-        setResetPaginationToggle(!resetPaginationToggle);
-        setFilterText("");
-      }
-    };
+  // const subHeaderComponentMemo = React.useMemo(() => {
+  //   const handleClear = () => {
+  //     if (filterText) {
+  //       setResetPaginationToggle(!resetPaginationToggle);
+  //       setFilterText("");
+  //     }
+  //   };
+  //
+  //   return (
+  //
+  //   );
+  // }, [filterText, resetPaginationToggle]);
 
-    return (
-      <FilterInput
-        onChange={e => setFilterText(e.target.value)}
-        onClear={handleClear}
-        filterText={filterText}
-      />
-    );
-  }, [filterText, resetPaginationToggle]);
-
-  const filteredData = data.filter((row: IData) => {
+  const filteredData: IData[] = data.filter((row: IData) => {
     if (filterText.length === 0) return true;
 
     return Object.keys(row).find(column => {
@@ -91,19 +36,22 @@ const Table: React.FC = () => {
     });
   });
 
+  if (size > TABLET_TO_DESKTOP_BREAKPOINT) {
+    return <NormalTable data={filteredData} />;
+  }
+
   return (
     <>
-      <DataTable
-        columns={columns}
-        data={filteredData}
-        fixedHeader={true}
-        fixedHeaderScrollHeight={"80vh"}
-        subHeader={true}
-        subHeaderComponent={subHeaderComponentMemo}
-        customStyles={customStyles}
-        highlightOnHover={true}
-        striped={true}
+      <FilterInput
+        onChange={e => setFilterText(e.target.value)}
+        onClear={() => setFilterText("")}
+        filterText={filterText}
       />
+      {size.width && size.width > TABLET_TO_DESKTOP_BREAKPOINT ? (
+        <NormalTable data={filteredData} />
+      ) : (
+        <StyledContainer>hi</StyledContainer>
+      )}
     </>
   );
 };
