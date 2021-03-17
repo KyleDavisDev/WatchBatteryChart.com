@@ -9,8 +9,6 @@ const NormalTable: React.FC<{ data: IData[] }> = props => {
     <DataTable
       columns={columns}
       data={props.data}
-      fixedHeader={true}
-      fixedHeaderScrollHeight={"80vh"}
       customStyles={customStyles}
       highlightOnHover={true}
       striped={true}
