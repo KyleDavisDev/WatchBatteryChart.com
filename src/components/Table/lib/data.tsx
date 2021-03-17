@@ -122,16 +122,16 @@ export const data: IData[] = [
   {
     Energizer: "339",
     Duracell: "--",
-    Maxell: "SR",
+    Maxell: "SR614SW",
     Timex: "--",
-    "Dimensions(mm)": "--"
+    "Dimensions(mm)": "6.8 x 1.45"
   },
   {
     Energizer: "341",
     Duracell: "--",
-    Maxell: "SR",
+    Maxell: "SR714SW",
     Timex: "--",
-    "Dimensions(mm)": "--"
+    "Dimensions(mm)": "7.9 x 1.45"
   },
   {
     Energizer: "343",
