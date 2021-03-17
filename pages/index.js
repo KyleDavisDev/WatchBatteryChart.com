@@ -15,6 +15,24 @@ const StyledContainer = styled.div`
   min-height: 100vh;
 `;
 
+const StyledBubble = styled.div`
+  background-color: #eee;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-bottom: 15px;
+  border: 1px solid #efefef;
+
+  > h6 {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 0;
+  }
+
+  > p {
+    margin-bottom: 0;
+  }
+`;
+
 export default function Home() {
   return (
     <StyledDiv>
@@ -25,6 +43,16 @@ export default function Home() {
 
       <main>
         <StyledContainer>
+          <StyledBubble>
+            <h6>Watch Battery Equivalence table</h6>
+            <p>
+              Below is a cross reference, or conversion chart, for the most
+              common watch battery types and sizes. Both regular (silver oxide
+              and mercury) and lithium batteries are shown. Simply take your
+              watch battery number and use either the filter text-box or scroll
+              down to locate the number and find it's counterparts.
+            </p>
+          </StyledBubble>
           <Table />
         </StyledContainer>
       </main>
