@@ -49,7 +49,8 @@ const customStyles = {
   },
   cells: {
     style: {
-      fontSize: "15px"
+      fontSize: "15px",
+      color: "#333"
     }
   }
 };

@@ -16,7 +16,8 @@ const StyledContainer = styled.div`
 `;
 
 const StyledBubble = styled.div`
-  background-color: #eee;
+  background-color: #fff;
+  color: #333;
   border-radius: 10px;
   padding: 10px 20px;
   margin-bottom: 15px;
