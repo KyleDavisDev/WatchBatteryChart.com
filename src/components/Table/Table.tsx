@@ -6,7 +6,7 @@ import NormalTable from "./components/NormalTable/NormalTable";
 import TowerTable from "./components/TowerTable/TowerTable";
 
 const Table: React.FC = () => {
-  const TABLET_TO_DESKTOP_BREAKPOINT = 993;
+  const TABLET_TO_DESKTOP_BREAKPOINT = 768;
   const size = useWindowSize();
   const [filterText, setFilterText] = React.useState("");
 
