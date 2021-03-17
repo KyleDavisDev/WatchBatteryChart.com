@@ -4,7 +4,7 @@ import Table from "../src/components/Table/Table";
 import styled from "styled-components";
 
 const StyledDiv = styled.div`
-  background: linear-gradient(45deg, #4158d0, #c850c0);
+  background: linear-gradient(45deg, #414cd0, #d062c9);
 `;
 
 const StyledContainer = styled.div`
