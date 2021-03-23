@@ -56,7 +56,7 @@ const TowerTable: React.FC<{ data: IData[] }> = props => {
               if (!name) return;
 
               return (
-                <StyledRow>
+                <StyledRow key={name}>
                   <StyledLeft>{name}</StyledLeft>
                   <StyledRight>{row[brand]}</StyledRight>
                   <br />
