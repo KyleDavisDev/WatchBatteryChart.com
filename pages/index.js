@@ -51,7 +51,7 @@ export default function Home() {
               common watch battery types and sizes. Both regular (silver oxide
               and mercury) and lithium batteries are shown. Simply take your
               watch battery number and use either the filter text-box or scroll
-              down to locate the number and find it's counterparts.
+              down to locate the number and find it counterparts.
             </p>
           </StyledBubble>
           <Table />
